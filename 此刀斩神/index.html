@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+   .text-container {
+      opacity: 0;
+      transition: opacity 3s cubic-bezier(0.4, 0, 0.2, 1);
+      font-size: 18px;
+      line-height: 1.5;
+      color: #333;
+    }
+
+   .text-container.show {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="text-container" id="text1">
+    这是第一个慢慢出现的文本。
+  </div>
+  <div class="text-container" id="text2">
+    这是第二个慢慢出现的文本。
+  </div>
+
+  <script>
+    window.addEventListener('load', function () {
+      const text1 = document.getElementById('text1');
+      const text2 = document.getElementById('text2');
+      text1.classList.add('show');
+      setTimeout(() => {
+        text2.classList.add('show');
+      }, 3000);
+    });
+  </script>
+</body>
+
+</html>
